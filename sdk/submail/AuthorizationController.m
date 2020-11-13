@@ -162,6 +162,7 @@
 }
 
 - (void)pressInit{
+    
     OclLogin *ocl = [OclLogin sharedInstance];
     [ocl initWithAppId:APPID AppKey:APPKEY];
 }
@@ -222,11 +223,44 @@
                 //电信号码
                 [self getMobileWithAppid:APPID WithToken:response[@"accessToken"] withAuth:response[@"auth"] completion:^(NSDictionary * _Nullable response) {
                     //do something
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self closeVC];
+                        NSString * params = [[NSString alloc] initWithFormat:@"你的号码是：%@",response[@"mobile"]];
+                        __block MBProgressHUD * hud = [[MBProgressHUD alloc] initWithView:self.view];
+                        [self.view addSubview:hud];
+                        hud.dimBackground = YES;
+                        hud.labelText = params;
+                        hud.mode = MBProgressHUDModeText;
+                        [hud showAnimated:YES whileExecutingBlock:^{
+                                            sleep(6);
+                                        } completionBlock:^{
+                                            [hud removeFromSuperview];
+                                            hud = nil;
+                                        }];
+                    });
                 }];
             }else{
                 //移动，联通号码
                 [self getMobileWithAppid:APPID WithToken:response[@"accessToken"] withAuth:nil completion:^(NSDictionary * _Nullable response) {
                     //do something
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self closeVC];
+                        NSString * params = [[NSString alloc] initWithFormat:@"你的号码是：%@",response[@"mobile"]];
+                        __block MBProgressHUD * hud = [[MBProgressHUD alloc] initWithView:self.view];
+                        [self.view addSubview:hud];
+                        hud.dimBackground = YES;
+                        hud.labelText = params;
+                        hud.mode = MBProgressHUDModeText;
+                        [hud showAnimated:YES whileExecutingBlock:^{
+                                            sleep(6);
+                                        } completionBlock:^{
+                                            [hud removeFromSuperview];
+                                            hud = nil;
+                                        }];
+                    });
+                    
                 }];
             }
         }
@@ -255,6 +289,8 @@
             NSDictionary * result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&err];
             if(!err){
                 NSLog(@"服务器响应数据：%@",result);
+                completion(result);
+                
             }else{
                 NSLog(@"服务器数据异常！%@",result);
             }
