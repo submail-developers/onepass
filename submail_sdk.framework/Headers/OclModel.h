@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImage *checkedImg;
 //复选框大小
 @property (nonatomic, strong) NSNumber *checkboxSize;
-
+//
 //协议状态
 @property (nonatomic, assign) BOOL privacyState;
 
@@ -62,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor * privacyColor;
 //协议Y轴偏移
 @property (nonatomic, strong) NSNumber * privacyOffsetY;
+//协议x轴偏移
+@property (nonatomic, strong) NSArray <NSNumber *> *privacyMarginLR;
 
 
 #pragma mark ========================协议页面======================
