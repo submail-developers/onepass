@@ -53,8 +53,6 @@ static UASDKErrorCode const UASDKErrorCodeServerBusy             = @"200082";
 static UASDKErrorCode const UASDKErrorCodeLocationError          = @"200086";
 //监听授权界面成功弹起
 static UASDKErrorCode const UASDKSuccessGetAuthVCCode            = @"200087";
-//SDK正在处理
-static UASDKErrorCode const UASDKErrorCodeHandling               = @"200089";
 //当前网络不支持取号
 static UASDKErrorCode const UASDKErrorCodeUnsupportedNetwork     = @"200096";
 

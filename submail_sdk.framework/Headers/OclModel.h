@@ -33,9 +33,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark ======================脱敏手机号展示===================
 //号码文本、大小、颜色
-@property (nonatomic, strong) NSAttributedString * numberText;
+@property (nonatomic, strong) NSDictionary<NSAttributedStringKey,id> * numberTextAttributes;
 //号码框距离顶部距离
 @property (nonatomic, strong) NSNumber * numberOffsetY;
+//号码框距离底部距离
+@property (nonatomic, strong) NSNumber * numberOffsetY_B;
 
 #pragma mark ========================隐私条款======================
 /*

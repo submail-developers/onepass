@@ -71,6 +71,7 @@ typedef void (^LoginBlock)(NSDictionary *_Nullable response);
  关闭授权界面
  */
 - (void)closeAuthViewController;
+- (void)openAuthViewController;
 
 @end
 
