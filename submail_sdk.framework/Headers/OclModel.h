@@ -73,7 +73,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)UIImage *webNavReturnImg;
 //标题栏颜色
 @property (nonatomic, strong)UIColor *webNavColor;
-//
+//标题文字属性
+@property (nonatomic,strong) NSDictionary<NSAttributedStringKey, id> *webNavTitleAttrs;
 
 
 #pragma mark ========================窗口模式======================
