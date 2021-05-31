@@ -67,6 +67,9 @@ NS_ASSUME_NONNULL_BEGIN
 //协议x轴偏移
 @property (nonatomic, strong) NSArray <NSNumber *> *privacyMarginLR;
 
+/**未勾选隐私条款提示的自定义提示文案，提示功能默认关闭，该属性设置有效时打开提示功能。*/
+@property (nonatomic, strong) NSString *checkTipText;
+
 
 #pragma mark ========================协议页面======================
 //返回按钮颜色
